@@ -38,19 +38,23 @@ PNGs are 2400px wide on transparent backgrounds. The lockup SVGs embed the two w
 | Stats (2,400+ vehicles, 5.0 rating, 180+ reviews) | Intro and reviews sections in `index.html` |
 | Testimonials | Reviews section: replace with real Google reviews (with permission) |
 | Instagram / Facebook links | Footer `href="#"` |
-| Prices, add-ons, travel zones, suburb list | Top of `assets/js/main.js` **and** the matching numbers in `index.html` |
+| Prices and add-ons | Top of `assets/js/main.js` **and** the matching numbers in `index.html` |
 | Photos | Six curated Unsplash photos (no visible car-brand badges) in `index.html`. Every photo gets the same cool monochrome grade from the `--grade` token in `styles.css`, so your own shots will match automatically when you swap them in. |
 | Before/after slider | Currently a simulated "before" made with CSS filters. Use a real before/after pair when available. |
 
 ## Receiving quote requests
 
-The form runs in **demo mode** until it's connected to a form service:
+The quote form is connected to **Formspree** (form ID `maeerore`, in the form's `action` in `index.html`). Submissions are emailed to the address set on that form in your Formspree dashboard, where you can also see past submissions and change spam settings. The customer's email is the reply-to address, so you can reply directly.
 
-1. Create a free form at [formspree.io](https://formspree.io) using your business email.
-2. Copy the form ID (e.g. `xyzabcd`).
-3. In `index.html`, replace `your-form-id` in `action="https://formspree.io/f/your-form-id"`.
+Each submission includes a readable summary line (vehicle, service, extras, suburb/zone, preferred time, estimate) plus the individual fields. A honeypot field filters basic spam. (If the ID is ever set back to `your-form-id`, the form switches to a demo mode that sends nothing.)
 
-Each submission includes a readable summary line (vehicle, service, extras, suburb/zone, preferred time, estimate) plus the individual fields. A honeypot field filters basic spam.
+## Service area
+
+Travel zones are based on **typical off-peak drive times from the Willetton base**: Zone 1 under 20 minutes (free), Zone 2 20–40 minutes (+$25), Zone 3 40–60 minutes (+$45). Anything further away is "ask us".
+
+- **Suburb lists:** `SUBURBS` near the top of `assets/js/main.js` (374 suburbs). The quote form uses it to show the travel fee as a customer types their suburb. To move a suburb to another zone, move its name to the other list; to change a fee, edit `ZONES` just above it **and** the fee badges in the Service area section of `index.html`.
+- **Map:** `assets/img/service-area-map.svg`, drawn from ABS Suburbs and Localities 2021 boundaries (CC BY 4.0) and OpenStreetMap water bodies (© OpenStreetMap contributors, ODbL), with drive times from the OSRM routing engine (OpenStreetMap data). The place names on top of it are HTML labels in `index.html` (`.map-places`), positioned in percentages of the map. The attribution under the map must stay.
+- Rottnest and Garden Island are excluded (not reachable by road).
 
 ## Deploying
 

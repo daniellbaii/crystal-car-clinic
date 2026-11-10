@@ -60,7 +60,11 @@
     "image": "https://daniellbaii.github.io/crystal-car-clinic/assets/img/og-image.png",
     "priceRange": "$129 - $2,790",
     "address": { "@type": "PostalAddress", "addressLocality": "Perth", "addressRegion": "WA", "addressCountry": "AU" },
-    "areaServed": { "@type": "City", "name": "Perth" },
+    "areaServed": [
+      { "@type": "City", "name": "Perth" },
+      { "@type": "City", "name": "Mandurah" },
+      { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": -32.052, "longitude": 115.888 }, "geoRadius": "65000" }
+    ],
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "18:00" }
     ]
@@ -491,59 +495,43 @@
           <ul class="zones">
             <li class="zone">
               <span class="zone-dot zone-dot--1" aria-hidden="true"></span>
-              <div><h3>Zone 1 <span class="zone-fee">Free travel</span></h3><p>Inner and middle suburbs within about 20 km of the CBD, from Scarborough and Fremantle to Midland and Canning Vale.</p></div>
+              <div><h3>Zone 1 <span class="zone-fee">Free travel</span></h3><p>Under 20 minutes from our base in Willetton: Fremantle, Applecross and South Perth through to Canning Vale, Gosnells and Forrestfield, plus the Perth CBD, Victoria Park and Belmont.</p></div>
             </li>
             <li class="zone">
               <span class="zone-dot zone-dot--2" aria-hidden="true"></span>
-              <div><h3>Zone 2 <span class="zone-fee">+$25</span></h3><p>Outer metro, including Joondalup, Ellenbrook, Kalamunda, Armadale, Cockburn and Kwinana.</p></div>
+              <div><h3>Zone 2 <span class="zone-fee">+$25</span></h3><p>20 to 40 minutes: the western and northern suburbs out to Joondalup, Midland and Ellenbrook, the hills from Kalamunda to Mundaring, and south to Armadale, Byford and Rockingham.</p></div>
             </li>
             <li class="zone">
               <span class="zone-dot zone-dot--3" aria-hidden="true"></span>
-              <div><h3>Zone 3 <span class="zone-fee">+$45</span></h3><p>Fringe suburbs, including Rockingham, Baldivis, Yanchep, Two Rocks, Byford and Mundaring.</p></div>
+              <div><h3>Zone 3 <span class="zone-fee">+$45</span></h3><p>40 to 60 minutes: the northern coast from Clarkson to Yanchep, Mandurah and Pinjarra, Serpentine and Jarrahdale, and the outer hills such as Gidgegannup and Chidlow.</p></div>
             </li>
           </ul>
-          <p class="fine-print">Further afield, such as Mandurah or the Perth Hills? Ask in your quote and we’ll do our best.</p>
+          <p class="fine-print">More than an hour away, such as Two Rocks or Waroona? Ask in your quote and we’ll do our best.</p>
         </div>
 
-        <!-- Map: tablet and desktop only; phones get the zone list above -->
-        <div class="area-map">
-          <svg viewBox="0 0 560 520" role="img" aria-labelledby="map-title map-desc">
-            <title id="map-title">Crystal Car Clinic service area map</title>
-            <desc id="map-desc">Three travel zones radiate from the Perth CBD: Zone 1 inner and middle suburbs with free travel, Zone 2 outer metro, and Zone 3 fringe suburbs such as Rockingham and Yanchep.</desc>
-            <defs>
-              <linearGradient id="ocean" x1="0" x2="1">
-                <stop offset="0" stop-color="#22324D" stop-opacity=".6"/>
-                <stop offset="1" stop-color="#22324D" stop-opacity=".15"/>
-              </linearGradient>
-            </defs>
-            <path class="map-ocean" d="M214 0C222 60 229 118 232 168s-7 92-4 132 13 78 8 118 3 70 2 102H0V0z" fill="url(#ocean)"/>
-            <text class="map-ocean-label" x="110" y="270" transform="rotate(-90 110 270)">Indian Ocean</text>
-            <circle cx="300" cy="260" r="250" class="map-ring ring-3"/>
-            <circle cx="300" cy="260" r="190" class="map-ring ring-2"/>
-            <circle cx="300" cy="260" r="110" class="map-ring ring-1"/>
-            <g class="map-zone-labels">
-              <text x="300" y="168" text-anchor="middle">ZONE 1</text>
-              <text x="300" y="88" text-anchor="middle">ZONE 2</text>
-              <text x="372" y="40" text-anchor="middle">ZONE 3</text>
-            </g>
-            <g class="map-dots">
-              <g><circle cx="242" cy="268" r="4"/><text x="252" y="286">Cottesloe</text></g>
-              <g><circle cx="250" cy="205" r="4"/><text x="260" y="201">Scarborough</text></g>
-              <g><circle cx="240" cy="318" r="4"/><text x="250" y="336">Fremantle</text></g>
-              <g><circle cx="372" cy="215" r="4"/><text x="382" y="211">Midland</text></g>
-              <g><circle cx="328" cy="350" r="4"/><text x="338" y="368">Canning Vale</text></g>
-              <g><circle cx="248" cy="122" r="4"/><text x="258" y="118">Joondalup</text></g>
-              <g><circle cx="382" cy="150" r="4"/><text x="392" y="146">Ellenbrook</text></g>
-              <g><circle cx="392" cy="392" r="4"/><text x="402" y="410">Armadale</text></g>
-              <g><circle cx="252" cy="470" r="4"/><text x="262" y="466">Rockingham</text></g>
-              <g><circle cx="232" cy="36" r="4"/><text x="242" y="56">Yanchep</text></g>
-            </g>
-            <g class="map-cbd">
-              <path d="M300 250l8 10-8 10-8-10z"/>
-              <text x="314" y="256">Perth CBD</text>
-            </g>
-          </svg>
-        </div>
+        <!-- Map: zones built from typical drive times out of Willetton (see README "Service area") -->
+        <figure class="area-map">
+          <div class="map-frame">
+            <img src="assets/img/service-area-map.svg" width="600" height="981" loading="lazy" decoding="async"
+                 alt="Map of Perth and Mandurah showing three travel zones around our Willetton base: Zone 1 within about 20 minutes, Zone 2 within 40 minutes reaching Joondalup, Midland and Rockingham, and Zone 3 within an hour reaching Yanchep, Mandurah and the outer hills.">
+            <span class="map-ocean-label" aria-hidden="true">Indian Ocean</span>
+            <ul class="map-places" aria-hidden="true">
+              <li style="--x:20.16%;--y:6.82%">Yanchep</li>
+              <li style="--x:36.4%;--y:23.74%">Joondalup</li>
+              <li style="--x:59.83%;--y:27.19%">Ellenbrook</li>
+              <li style="--x:34.84%;--y:37.03%">Scarborough</li>
+              <li style="--x:64.15%;--y:36.43%">Midland</li>
+              <li style="--x:47.06%;--y:42.24%">Perth CBD</li>
+              <li style="--x:70.86%;--y:43.65%">Kalamunda</li>
+              <li class="is-left" style="--x:34.77%;--y:50.72%">Fremantle</li>
+              <li class="map-base" style="--x:50.34%;--y:50.64%"><b>Willetton</b><small>Our base</small></li>
+              <li style="--x:65.63%;--y:59.31%">Armadale</li>
+              <li class="is-left" style="--x:32.85%;--y:70.87%">Rockingham</li>
+              <li class="is-left" style="--x:30.23%;--y:92.17%">Mandurah</li>
+            </ul>
+          </div>
+          <figcaption>Zones follow typical off-peak drive times from Willetton. Map data: ABS (CC BY 4.0), © OpenStreetMap contributors.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -597,7 +585,7 @@
 
         <div class="quote-grid">
           <!-- PLACEHOLDER: replace "your-form-id" with your Formspree form ID (see README). Until then, the form runs in demo mode. -->
-          <form class="quote-form" id="quote-form" action="https://formspree.io/f/your-form-id" method="POST" novalidate data-quote>
+          <form class="quote-form" id="quote-form" action="https://formspree.io/f/maeerore" method="POST" novalidate data-quote>
             <ol class="steps-nav" aria-label="Quote progress">
               <li data-step-ind="1" aria-current="step"><span class="steps-num">1</span><span class="steps-label">Vehicle</span></li>
               <li data-step-ind="2"><span class="steps-num">2</span><span class="steps-label">Service</span></li>

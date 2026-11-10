@@ -833,19 +833,36 @@ body.is-locked { overflow: hidden; }
 /* ---------- 06 Service area ---------- */
 .area-grid { display: grid; gap: var(--s-8); align-items: center; }
 @media (min-width: 1024px) { .area-grid { grid-template-columns: 1fr 1fr; gap: var(--s-9); } }
-.area-map { display: none; position: relative; border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--line); background: var(--bg-2); padding: var(--s-4); }
-@media (min-width: 768px) { .area-map { display: block; } }
-.area-map svg { width: 100%; height: auto; }
-.map-ocean-label { fill: rgba(212,233,255,.4); font: italic 18px var(--font-display); letter-spacing: .3em; }
-.map-ring { fill: none; stroke-width: 1; }
-.ring-1 { stroke: rgba(212,233,255,.7); fill: rgba(212,233,255,.04); }
-.ring-2 { stroke: rgba(212,233,255,.4); stroke-dasharray: 3 6; }
-.ring-3 { stroke: rgba(212,233,255,.22); stroke-dasharray: 2 7; }
-.map-zone-labels text { fill: var(--text-3); font: 600 11px var(--font-body); letter-spacing: .25em; }
-.map-dots circle { fill: var(--ice); }
-.map-dots text { fill: var(--text-2); font: 500 14px var(--font-body); }
-.map-cbd path { fill: var(--ice); }
-.map-cbd text { fill: var(--text); font: 700 15px var(--font-body); }
+
+/* Service-area map: a real map (assets/img/service-area-map.svg) with HTML labels on top,
+   so place names stay crisp and readable at every size. Positions are % of the map frame. */
+.area-map { margin: 0; width: 100%; max-width: 460px; justify-self: center; }
+.map-frame {
+  position: relative; aspect-ratio: 600 / 981; overflow: hidden;
+  border-radius: var(--r-xl); border: 1px solid var(--line); background: #08090F;
+}
+.map-frame img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.map-ocean-label {
+  position: absolute; left: 9%; top: 58%; transform: translate(-50%, -50%) rotate(-90deg);
+  font: italic 1rem var(--font-display); letter-spacing: .3em; color: rgba(212,233,255,.38); white-space: nowrap;
+}
+.map-places { margin: 0; padding: 0; list-style: none; }
+.map-places li {
+  position: absolute; left: var(--x); top: var(--y);
+  display: flex; align-items: center; gap: 6px; transform: translate(-2.5px, -50%);
+  font: 500 .75rem/1 var(--font-body); color: var(--text-2); white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0,0,0,.9), 0 0 8px rgba(0,0,0,.75);
+}
+.map-places li::before { content: ""; flex: none; width: 5px; height: 5px; border-radius: 50%; background: var(--ice); box-shadow: 0 0 0 2px rgba(8,9,15,.6); }
+.map-places li.is-left { flex-direction: row-reverse; transform: translate(calc(-100% + 2.5px), -50%); }
+.map-places .map-base { gap: 8px; transform: translate(-5px, -50%); color: var(--text); }
+.map-places .map-base::before {
+  width: 10px; height: 10px; border-radius: 1px; transform: rotate(45deg);
+  box-shadow: 0 0 0 3px rgba(212,233,255,.18), 0 0 14px rgba(212,233,255,.7);
+}
+.map-base b { font-weight: 700; }
+.map-base small { font-size: .5625rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--ice); }
+.area-map figcaption { margin-top: var(--s-3); font-size: var(--fs-xs); color: var(--text-3); line-height: 1.5; }
 .zones { display: grid; margin-top: var(--s-6); border-top: 1px solid var(--line-strong); }
 .zone { display: flex; gap: var(--s-4); align-items: flex-start; padding: var(--s-5) 0; border-bottom: 1px solid var(--line); }
 .zone h3 { font-family: var(--font-body); font-size: var(--fs-base); font-weight: 600; display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; line-height: 1.3; }
