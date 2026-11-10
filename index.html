@@ -37,13 +37,10 @@
   <link rel="preload" href="assets/fonts/instrument-serif-italic-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-normal-variable.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Hero image preload. One photograph, art-directed: portrait crop on phones, landscape elsewhere. -->
-  <link rel="preload" as="image" media="(max-width: 767px)" fetchpriority="high"
-        imagesrcset="https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&crop=focalpoint&fp-x=.52&fp-y=.5&q=70&w=600&h=1000 600w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&crop=focalpoint&fp-x=.52&fp-y=.5&q=70&w=900&h=1500 900w"
-        imagesizes="100vw">
-  <link rel="preload" as="image" media="(min-width: 768px)" fetchpriority="high"
-        imagesrcset="https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1280 1280w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1920 1920w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=2560 2560w"
-        imagesizes="100vw">
+  <!-- Hero image preload. One landscape photograph, shown whole (car framed to the right) at every size. -->
+  <link rel="preload" as="image" fetchpriority="high"
+        imagesrcset="https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=800 800w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1280 1280w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1920 1920w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=2560 2560w"
+        imagesizes="(max-width: 767px) 120vw, 78vw">
 
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -154,12 +151,9 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-media" data-parallax>
         <picture>
-          <source media="(max-width: 767px)"
-                  srcset="https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&crop=focalpoint&fp-x=.52&fp-y=.5&q=70&w=600&h=1000 600w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&crop=focalpoint&fp-x=.52&fp-y=.5&q=70&w=900&h=1500 900w"
-                  sizes="100vw">
           <img class="graded" src="https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1920"
-               srcset="https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1280 1280w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1920 1920w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=2560 2560w"
-               sizes="100vw" width="1920" height="1094" alt="A gleaming black sports car emerging from shadow, its paint catching soft studio light"
+               srcset="https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=800 800w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1280 1280w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=1920 1920w, https://images.unsplash.com/photo-1645400379459-f6fd3d963fd4?auto=format&fit=crop&q=70&w=2560 2560w"
+               sizes="(max-width: 767px) 120vw, 78vw" width="1920" height="1094" alt="A gleaming black sports car emerging from shadow, its paint catching soft studio light"
                fetchpriority="high" decoding="async" data-hero-img>
         </picture>
       </div>
