@@ -40,7 +40,7 @@ PNGs are 2400px wide on transparent backgrounds. The lockup SVGs embed the two w
 | Instagram / Facebook links | Footer `href="#"` |
 | Prices and add-ons | Top of `assets/js/main.js` **and** the matching numbers in `index.html` |
 | Photos | Six curated Unsplash photos (no visible car-brand badges) in `index.html`. Every photo gets the same cool monochrome grade from the `--grade` token in `styles.css`, so your own shots will match automatically when you swap them in. |
-| Before/after slider | Currently a simulated "before" made with CSS filters. Use a real before/after pair when available. |
+| Ceramic comparison slider | Currently an AI-generated illustration (`assets/img/ceramic-before-*.jpg` / `ceramic-after-*.jpg`, labelled as such under the slider). Replace it with your own 50/50 shot when you have one: same car, same angle and light, half coated. Keep the three sizes (1536 and 1024 wide landscape, 720×1024 portrait crop for phones) and update the caption. |
 
 ## Receiving quote requests
 

@@ -299,21 +299,21 @@
     <section class="ceramic" id="ceramic" aria-labelledby="ceramic-title">
       <div class="ceramic-stage">
         <div class="compare" data-compare style="--pos:50%">
+          <!-- AI-generated illustration (one image, edited to show the same paint uncoated), labelled as such below -->
           <picture class="compare-layer compare-after">
-            <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1608382247609-7078eb3f9108?auto=format&fit=crop&q=70&w=800&h=1100 800w" sizes="100vw">
-            <img class="graded" src="https://images.unsplash.com/photo-1608382247609-7078eb3f9108?auto=format&fit=crop&q=70&w=1920&h=1000"
-                 srcset="https://images.unsplash.com/photo-1608382247609-7078eb3f9108?auto=format&fit=crop&q=70&w=1280&h=667 1280w, https://images.unsplash.com/photo-1608382247609-7078eb3f9108?auto=format&fit=crop&q=70&w=1920&h=1000 1920w"
-                 sizes="100vw" width="1920" height="1000" loading="lazy" decoding="async"
-                 alt="Tight, round water beads sitting on freshly coated black paint">
+            <source media="(max-width: 767px)" srcset="assets/img/ceramic-after-portrait.jpg" width="720" height="1024">
+            <img class="graded" src="assets/img/ceramic-after-1536.jpg"
+                 srcset="assets/img/ceramic-after-1024.jpg 1024w, assets/img/ceramic-after-1536.jpg 1536w"
+                 sizes="100vw" width="1536" height="1024" loading="lazy" decoding="async"
+                 alt="Illustration: ceramic-coated black paint with a deep mirror gloss and tight, round water beads">
           </picture>
           <div class="compare-before" aria-hidden="true">
             <picture class="compare-layer">
-              <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1608382247609-7078eb3f9108?auto=format&fit=crop&q=70&w=800&h=1100 800w" sizes="100vw">
-              <img class="graded" src="https://images.unsplash.com/photo-1608382247609-7078eb3f9108?auto=format&fit=crop&q=70&w=1920&h=1000"
-                   srcset="https://images.unsplash.com/photo-1608382247609-7078eb3f9108?auto=format&fit=crop&q=70&w=1280&h=667 1280w, https://images.unsplash.com/photo-1608382247609-7078eb3f9108?auto=format&fit=crop&q=70&w=1920&h=1000 1920w"
-                   sizes="100vw" width="1920" height="1000" loading="lazy" decoding="async" alt="">
+              <source media="(max-width: 767px)" srcset="assets/img/ceramic-before-portrait.jpg" width="720" height="1024">
+              <img class="graded" src="assets/img/ceramic-before-1536.jpg"
+                   srcset="assets/img/ceramic-before-1024.jpg 1024w, assets/img/ceramic-before-1536.jpg 1536w"
+                   sizes="100vw" width="1536" height="1024" loading="lazy" decoding="async" alt="">
             </picture>
-            <span class="compare-haze"></span>
           </div>
           <div class="ceramic-overlay">
             <div class="container">
@@ -322,13 +322,13 @@
               <p class="ceramic-lede">A professionally applied 9H coating bonds to your clear coat, forming a glass-like shield that repels water, dust and grime for years, not weeks.</p>
             </div>
           </div>
-          <span class="compare-label compare-label--before" aria-hidden="true">Before</span>
-          <span class="compare-label compare-label--after" aria-hidden="true">After</span>
+          <span class="compare-label compare-label--before" aria-hidden="true">Uncoated</span>
+          <span class="compare-label compare-label--after" aria-hidden="true">Ceramic coated</span>
           <span class="compare-handle" aria-hidden="true"><span class="compare-knob"><svg class="icon"><use href="#i-chev-l"/></svg><svg class="icon"><use href="#i-chev-r"/></svg></span></span>
-          <label class="sr-only" for="compare-range">Before and after comparison. Move to reveal more of the before or after view.</label>
+          <label class="sr-only" for="compare-range">Illustrated comparison of the same paint uncoated and ceramic coated. Move to reveal more of either side: uncoated paint looks hazy and swirled with flat water marks; coated paint is glossy with round water beads.</label>
           <input class="compare-range" id="compare-range" type="range" min="0" max="100" value="50" step="1" data-compare-range>
         </div>
-        <p class="container compare-caption">Drag to compare. This is an illustrative simulation; swap in your own before and after photos.</p>
+        <p class="container compare-caption">Drag to compare. AI-generated illustration of what a ceramic coating changes, not a photo of our work.</p>
       </div>
 
       <div class="container ceramic-detail">

@@ -611,22 +611,12 @@ body.is-locked { overflow: hidden; }
 @media (max-width: 767px) { .compare { height: 86svh; min-height: 540px; } }
 .compare-layer, .compare-layer img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .compare-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
-.compare-before .graded { filter: var(--grade) brightness(.62) contrast(.72) blur(1.2px); }
-/* simulated swirl marks + water spotting + haze */
-.compare-haze {
-  position: absolute; inset: 0;
-  background:
-    repeating-radial-gradient(circle at 62% 40%, rgba(255,255,255,.06) 0 1px, transparent 1px 7px),
-    radial-gradient(circle at 30% 70%, rgba(220,215,200,.16), transparent 45%),
-    linear-gradient(180deg, rgba(200,195,185,.12), rgba(200,195,185,.05));
-  mix-blend-mode: screen;
-}
 .ceramic-overlay {
   position: absolute; inset: 0; z-index: 2; pointer-events: none;
   padding-top: clamp(4.5rem, 12vh, 8rem);
   background:
-    linear-gradient(180deg, rgba(7,7,11,.9) 0%, rgba(7,7,11,.5) 30%, rgba(7,7,11,0) 58%),
-    linear-gradient(90deg, rgba(7,7,11,.8) 0%, rgba(7,7,11,.45) 38%, rgba(7,7,11,0) 62%),
+    linear-gradient(180deg, rgba(7,7,11,.85) 0%, rgba(7,7,11,.35) 26%, rgba(7,7,11,0) 50%),
+    linear-gradient(90deg, rgba(7,7,11,.7) 0%, rgba(7,7,11,.28) 32%, rgba(7,7,11,0) 50%),
     linear-gradient(0deg, rgba(7,7,11,.55) 0%, rgba(7,7,11,0) 22%);
 }
 @media (max-width: 767px) {
