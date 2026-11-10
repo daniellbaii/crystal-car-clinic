@@ -1,0 +1,7 @@
+# Local tooling and OS clutter (not part of the website)
+.claude/
+node_modules/
+*.log
+Thumbs.db
+desktop.ini
+.DS_Store
