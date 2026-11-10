@@ -422,6 +422,7 @@
       pointerType = e.pointerType;
       startX = e.clientX; startY = e.clientY;
       if (pointerType === 'mouse') {
+        e.preventDefault(); // no native image drag or text selection stealing the gesture
         dragging = true;
         compare.classList.add('is-dragging');
         setPos(fromEvent(e));
@@ -447,6 +448,7 @@
     };
     compare.addEventListener('pointerup', end);
     compare.addEventListener('pointercancel', end);
+    compare.addEventListener('dragstart', (e) => e.preventDefault()); // the photos are never draggable
 
     // One-time hint that the divider can be dragged
     if ('IntersectionObserver' in window && !reduce()) {

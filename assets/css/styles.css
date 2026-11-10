@@ -610,6 +610,9 @@ body.is-locked { overflow: hidden; }
 }
 @media (max-width: 767px) { .compare { height: 86svh; min-height: 540px; } }
 .compare-layer, .compare-layer img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* The photos only display; every press goes to the slider itself, never to a native image drag */
+.compare-layer, .compare-before { pointer-events: none; }
+.compare img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 .compare-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
 .ceramic-overlay {
   position: absolute; inset: 0; z-index: 2; pointer-events: none;
