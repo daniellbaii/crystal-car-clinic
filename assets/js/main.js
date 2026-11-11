@@ -605,8 +605,8 @@
   }
 
   /* ==========================================================================
-     (7) Desktop: phone and email links copy to the clipboard with a
-     confirmation (desktops rarely have a dialler). Touch devices are unchanged.
+     (7) Desktop: email (and any tel:) links copy to the clipboard with a
+     confirmation. WhatsApp links open WhatsApp Web / the app as normal.
      ========================================================================== */
   const toast = document.createElement('div');
   toast.className = 'toast';
@@ -1035,7 +1035,7 @@
         success.focus({ preventScroll: true });
         if (form.getBoundingClientRect().top < 0) form.scrollIntoView({ behavior: reduce() ? 'auto' : 'smooth', block: 'start' });
       } catch (err) {
-        alertEl.textContent = 'Sorry, we couldn’t send your request just now. Please try again, or call us on 0491 570 156.';
+        alertEl.textContent = 'Sorry, we couldn’t send your request just now. Please try again, or message us on WhatsApp on 0481 972 777.';
         alertEl.hidden = false;
       } finally {
         btnSubmit.classList.remove('is-loading');

@@ -31,7 +31,6 @@ PNGs are 2400px wide on transparent backgrounds. The lockup SVGs embed the two w
 
 | What | Where |
 |---|---|
-| Phone `0491 570 156` (an ACMA-reserved fictional number) | Search `0491 570 156` and `+61491570156` in `index.html` |
 | Email `hello@crystalcarclinic.com.au` | `index.html` (FAQ, footer, JSON-LD) |
 | ABN `00 000 000 000` | Footer in `index.html` |
 | Domain `www.crystalcarclinic.com.au` | `<link rel="canonical">` and JSON-LD in `index.html` |
@@ -41,6 +40,14 @@ PNGs are 2400px wide on transparent backgrounds. The lockup SVGs embed the two w
 | Prices and add-ons | Top of `assets/js/main.js` **and** the matching numbers in `index.html` |
 | Photos | Six curated Unsplash photos (no visible car-brand badges) in `index.html`. Every photo gets the same cool monochrome grade from the `--grade` token in `styles.css`, so your own shots will match automatically when you swap them in. |
 | Ceramic comparison slider | Currently an AI-generated illustration (`assets/img/ceramic-before-*.jpg` / `ceramic-after-*.jpg`, labelled as such under the slider). Replace it with your own 50/50 shot when you have one: same car, same angle and light, half coated. Keep the three sizes (1536 and 1024 wide landscape, 720×1024 portrait crop for phones) and update the caption. |
+
+## Customer contact: WhatsApp
+
+Every contact button opens a **WhatsApp chat** with **0481 972 777** (header, mobile menu, FAQ, footer and the sticky bar on phones), with a friendly first message already typed. The links use WhatsApp's click-to-chat format:
+
+`https://wa.me/61481972777?text=Hi%20Crystal%20Car%20Clinic%2C%20I%20have%20a%20question%20about%20a%20detail.`
+
+To change the number, search `61481972777` and `0481 972 777` in `index.html` (and the form's error message in `assets/js/main.js`). The number must be in international format without the `+` or leading 0. Using the free **WhatsApp Business** app on that number lets you set a business profile, opening hours, an away message and quick replies.
 
 ## Receiving quote requests
 
@@ -70,8 +77,8 @@ It also works unchanged on Netlify, Cloudflare Pages or any static host. No buil
 - **Performance:** no JS frameworks; hero text and photo paint immediately (nothing is hidden for an entrance animation); responsive `srcset` images served as AVIF/WebP by Unsplash; lazy loading below the fold; one hero photo, shown whole with the car framed to the right of the headline (smaller on phones, beside "Showroom clarity,"); animations use only `transform`/`opacity`.
 - **Fonts:** Instrument Serif (regular + italic) and Manrope (variable, 400–700) are self-hosted in `assets/fonts/` (latin subset, 67 KB total, SIL Open Font License), preloaded, with `font-display: swap`. Size-matched fallback fonts mean the layout doesn't shift when they arrive. The site makes no requests to Google.
 - **Glint words:** "clarity," (crystal gradient) and the section words "finish", "a reflection" and "shine" (brushed silver) carry a prismatic highlight. On desktop it fades in when the cursor comes within ~220px and eases along the word to follow it; on touch screens each section word sweeps once as it comes into view; "clarity," also sweeps once on load. To add the effect to another word, give its element `class="glint-word glint-silver" data-glint`.
-- **Micro-interactions:** the crystal-drop logo's facets glint once on load and on mouse hover or keyboard focus (not on click); package prices and the quote estimate roll digit by digit; the vehicle-size pill stretches like liquid and inverts the label beneath it; on desktop, phone and email links copy to the clipboard with a confirmation; each section label's diamond glints once when the section is well into view, and one nav underline slides between links; the gallery lightbox fades in and out. The header stays fixed at the top while scrolling.
+- **Micro-interactions:** the crystal-drop logo's facets glint once on load and on mouse hover or keyboard focus (not on click); package prices and the quote estimate roll digit by digit; the vehicle-size pill stretches like liquid and inverts the label beneath it; on desktop, email links copy to the clipboard with a confirmation; each section label's diamond glints once when the section is well into view, and one nav underline slides between links; the gallery lightbox fades in and out. The header stays fixed at the top while scrolling.
 - **Motion (deliberately few moments):** a one-time glint on "clarity" in the hero, animated price changes between vehicle sizes, the ceramic before/after with a one-time drag hint, the process line drawing as you scroll, gentle depth in the gallery photos, and small hover details. There are no scroll-triggered fade-ins and no looping background animations. Everything is disabled under `prefers-reduced-motion`.
-- **Phones:** swipeable package cards (opening on the most popular package), a full-height ceramic slider that never blocks vertical scrolling, a zone list instead of the map, a sticky Call / Estimate bar, and swipe between reviews.
+- **Phones:** swipeable package cards (opening on the most popular package), a full-height ceramic slider that never blocks vertical scrolling, a zone list instead of the map, a sticky WhatsApp / Estimate bar, and swipe between reviews.
 - **Accessibility:** skip link, semantic landmarks, visible focus rings, keyboard-operable before/after slider (native range input), focus-trapped mobile menu, native `<dialog>` lightbox, labelled form fields with inline errors announced to screen readers, and a pause button on the moving marquee.
 - **Local SEO:** `AutoWash` structured data (with logo), Perth suburbs in content, Open Graph and Twitter tags with a branded 1200×630 link-preview image.
