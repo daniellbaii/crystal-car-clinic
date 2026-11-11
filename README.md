@@ -7,7 +7,7 @@ Plain HTML, CSS and JavaScript with no build step and no frameworks, so it loads
 index.html            All page content and SEO metadata
 assets/css/styles.css Design tokens (colours, type, spacing, motion) and all styles
 assets/js/main.js     Interactions, quote wizard, and the editable PRICES / ZONES / SUBURBS data
-assets/img/            favicon.svg, favicon-32.png, apple-touch-icon.png, og-image.png (link previews)
+assets/img/            Transparent icons (favicon.svg, favicon-32/192.png, apple-touch-icon.png), og-image.png (link previews), site photos
 assets/brand/          Logo files (see "Brand files" below)
 serve.mjs             Optional local preview server (`node serve.mjs`, then http://localhost:5173)
 ```
