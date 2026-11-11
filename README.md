@@ -23,7 +23,8 @@ The logo is the **low-poly crystal drop**: an angular droplet made of six solid 
 | `crystal-car-clinic-logo-white.svg` / `-black.svg` | One-colour logo for decals, embroidery, stamps and single-colour print: the facets are separated by thin cut-out gaps instead of colour |
 | `crystal-car-clinic-mark-colour.svg` / `-colour-on-light.svg` | The drop on its own, full colour, for dark / light backgrounds |
 | `crystal-car-clinic-mark-white.svg` / `-ice.svg` / `-black.svg` | The drop on its own, one colour |
-| `crystal-car-clinic-profile-1080.png` | Square profile picture for Instagram, Facebook and Google Business Profile |
+| `crystal-car-clinic-profile-stacked-1080.png` | Profile picture with the name: the drop over "Crystal / CAR CLINIC", centred, sized to sit inside Instagram's circular crop |
+| `crystal-car-clinic-profile-1080.png` | Profile picture with the drop only: reads best at very small sizes (comments, story rings) |
 
 PNGs are 2400px wide on transparent backgrounds. The lockup SVGs embed the two web fonts so they render correctly in browsers; **for a print shop or sign writer, ask them to convert the text to outlines** (a one-click step in Illustrator or Affinity), or send the PNG.
 
